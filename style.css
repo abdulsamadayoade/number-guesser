@@ -1,0 +1,28 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: rgb(238, 236, 236);
+}
+
+#guess-input {
+    padding: 1.3rem;
+    border: 1px solid lightgray;
+}
+
+#guess-input:focus,
+#guess-btn:focus {
+    outline: .5px solid darkgray;
+}
+
+#guess-btn {
+    font-size: 1.3rem 1.5rem;
+    padding: 1.3rem;
+    background-color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
