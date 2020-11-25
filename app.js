@@ -1,7 +1,7 @@
 // GAME VALUE
 let min = 1,
     max = 10,
-    winningNum = 2,
+    winningNum = getRandomNum(min, max),
     guessesLeft = 3;
 
 
@@ -17,6 +17,13 @@ const game = document.querySelector('#game'),
 // ASSIGN MIN AND MAX VALUES
 minNum.textContent = min;
 maxNum.textContent = max;
+
+// PLAY AGAIN
+game.addEventListener('mousedown', function (e) {
+    if (e.target.className === 'play-again') {
+        window.location.reload();
+    }
+});
 
 // LISTEN FOR GUESS
 guessBtn.addEventListener('click', function () {
@@ -68,6 +75,15 @@ function gameOver(won, msg) {
 
     // SET MESSAGE
     setMessage(msg);
+
+    // PLAY AGAIN
+    guessBtn.value = 'Play Again';
+    guessBtn.className += 'play-again';
+}
+
+// GET WINNING NUMBER
+function getRandomNum(min, max) {
+    return (Math.floor(Math.random() * (max - min + 1) + min));
 }
 
 // SET MESSAGE
